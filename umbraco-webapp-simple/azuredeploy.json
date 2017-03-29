@@ -36,6 +36,7 @@
             "metadata": {
                 "description": "SQL Azure DB Server name"
             }
+
         },
         "dbAdministratorLogin": {
             "type": "string",
@@ -46,6 +47,7 @@
         "dbAdministratorLoginPassword": {
             "type": "securestring",
             "metadata": {
+
                 "description": "Database admin user password"
             }
         },
@@ -94,7 +96,7 @@
         }
     },
     "variables": {
-        "appInsightsRegion": "Central US",
+        "appInsightsRegion": "[resourceGroup().id]",
         "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'standardsa')]",
         "umbracoAdminWebAppName": "[concat(parameters('appName'), 'adminapp')]",
         "appServicePlanName":"[concat(parameters('appName'), 'serviceplan')]"
